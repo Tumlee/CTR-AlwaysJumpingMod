@@ -1,0 +1,6 @@
+common, exe, rdata_free, 0x0, src/main.c
+
+//Hooking into multiple functions for redundancy, and to cover multiple game modes. 
+common, exe, BOTS_SetRotation, -0x8, src/hook.s             //Hook into the return instruction of BOTS_UpdateGlobals 
+common, exe, UI_RenderFrame_AdvHub, -0x8, src/hook2.s       //Hook into the return instruction of UI_RenderFrame_Racing
+common, exe, UI_RenderFrame_CrystChall, -0x8, src/hook3.s   //Hook into the return instruction of UI_RenderFrame_AdvHub
